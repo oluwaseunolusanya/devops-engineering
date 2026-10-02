@@ -1,0 +1,2 @@
+[2023-10-26 10:00:03] ERROR: Failed to process payment transaction #12345.
+[2023-10-26 10:00:06] ERROR: NullpointerException at com.innovatex.Billing.process(Billing.java:101).
