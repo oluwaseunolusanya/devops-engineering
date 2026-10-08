@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo 'Hello from the script!'
+echo 'Hello from the script.'
 
