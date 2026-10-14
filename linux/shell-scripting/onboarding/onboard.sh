@@ -25,3 +25,4 @@ else
     echo "Usage: ./onboard.sh <username>"
     exit 1
 fi
+echo "[$(date)] User $user created." >> ./onboard.log
