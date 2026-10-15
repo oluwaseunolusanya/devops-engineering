@@ -16,3 +16,12 @@ cleanup(){
 # or exited.
 trap cleanup SIGINT EXIT
 
+# Archive a log file
+archive_log(){
+    local file_path=$1
+    local new_name=${file_path/.log/.backup}
+    if $file_path; then
+        cp $file_path $new_name
+        echo "Backed up: $file_path" >> $REPORT_FILE
+    fi
+}
