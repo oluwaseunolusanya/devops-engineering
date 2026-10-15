@@ -1,0 +1,3 @@
+Backed up: /home/seun-olusanya/devops-engineering/linux/shell-scripting/logs/app.log
+Backed up: /home/seun-olusanya/devops-engineering/linux/shell-scripting/logs/db.log
+Backed up: /home/seun-olusanya/devops-engineering/linux/shell-scripting/logs/auth.log

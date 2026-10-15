@@ -5,6 +5,11 @@
 
 REPORT_FILE="report.txt"
 TEMP_FILE="log_manager.tmp"
+LOG_FILES=(
+"/home/seun-olusanya/devops-engineering/linux/shell-scripting/logs/app.log" 
+"/home/seun-olusanya/devops-engineering/linux/shell-scripting/logs/db.log" 
+"/home/seun-olusanya/devops-engineering/linux/shell-scripting/logs/auth.log"
+)
 
 # Clean function to remove temporary files
 cleanup(){
@@ -20,8 +25,15 @@ trap cleanup SIGINT EXIT
 archive_log(){
     local file_path=$1
     local new_name=${file_path/.log/.backup}
-    if $file_path; then
-        cp $file_path $new_name
-        echo "Backed up: $file_path" >> $REPORT_FILE
-    fi
+    sudo cp $file_path $new_name
+    echo "Backed up: $file_path" >> $REPORT_FILE
 }
+
+# Create backup
+for log in ${LOG_FILES[@]};do
+    if [ -f $log ]; then
+        archive_log $log &> /dev/null
+    else
+        echo "File not found: $log"
+    fi
+done
