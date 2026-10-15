@@ -6,12 +6,13 @@ cleanup(){
    echo "Cleaning up temporary files..."
    rm -f $temp
    echo "Cleanup complete."
+   exit 0
 }
 
 # Register the trap
 # SIGINT - Ctrl+C
 # EXIT - Any exit(success or failure)
-trap cleanup SIGINT EXIT
+trap cleanup SIGINT
 
 # Create a temporary file
 temp=temp_data.txt
