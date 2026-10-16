@@ -1,0 +1,5 @@
+Item Quantity
+Bagel 4
+Cheese 2
+Bacon 3
+Eggs 5
